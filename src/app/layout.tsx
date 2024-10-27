@@ -16,7 +16,7 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
         </header>
         <main>{children}</main>
         <footer>
-          <p>© 2024 [Your Name]. All Rights Reserved.</p>
+          <p>© 2024 Yuma Kobuchi. All Rights Reserved.</p>
         </footer>
       </body>
     </html>

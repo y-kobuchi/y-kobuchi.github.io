@@ -2,7 +2,7 @@ const Home: FC = () => {
   return (
     <div>
       <h1>Welcome to My Portfolio!</h1>
-      <p>Hi, I'm [Your Name], a web developer based in [Location].</p>
+      <p>Hi, I'm Yuma Kobuchi, a web developer based in Sapporo.</p>
     </div>
   );
 };
