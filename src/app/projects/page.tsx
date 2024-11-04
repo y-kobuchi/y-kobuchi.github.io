@@ -1,17 +1,25 @@
-import { FC } from 'react'
+import Link from "next/link";
+import ProjectCard from "@/components/ProjectCard";
 
-const Projects: FC = () => {
-    return (
+const projects = [
+  { title: "プロジェクト一", description: "プロジェクト一の説明です。" },
+  { title: "プロジェクト二", description: "プロジェクト二の説明です。" },
+];
+
+export default function ProjectsPage() {
+  return (
+    <div>
+      <h1>プロジェクト</h1>
       <div>
-        <h1>My Projects</h1>
-        <ul>
-          <li>Project 1</li>
-          <li>Project 2</li>
-          <li>Project 3</li>
-        </ul>
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={index}
+            title={project.title}
+            description={project.description}
+          />
+        ))}
       </div>
-    );
-  };
-  
-  export default Projects;
-  
+      <Link href="/">← ホームに戻る</Link>
+    </div>
+  );
+}
