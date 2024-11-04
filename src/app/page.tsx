@@ -1,12 +1,17 @@
-import { FC } from 'react';
+import Link from "next/link";
 
-const Home: FC = () => {
+export default function HomePage() {
   return (
     <div>
-      <h1>Welcome to My Portfolio!</h1>
-      <p>Hi, I&apos;m Yuma Kobuchi, a web developer based in Sapporo.</p>
+      <h1>ポートフォリオへようこそ</h1>
+      <p>
+        こんにちは！私はバックエンド・フロントエンド・クラウド開発を行うフルスタックエンジニアです。
+      </p>
+      <nav>
+        <Link href="/about">自己紹介</Link> |
+        <Link href="/projects">プロジェクト</Link> |
+        <Link href="/contact">お問い合わせ</Link>
+      </nav>
     </div>
   );
-};
-
-export default Home;
+}

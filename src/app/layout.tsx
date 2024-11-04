@@ -1,26 +1,24 @@
-import { FC, ReactNode } from 'react';
-import Link from 'next/link';
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import "./globals.css";
 
-const Layout: FC<{ children: ReactNode }> = ({ children }) => {
+export const metadata = {
+  title: "My Portfolio",
+  description: "An engineer's portfolio",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body>
-        <header>
-          <nav>
-            <ul>
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/about">About</Link></li>
-              <li><Link href="/projects">Projects</Link></li>
-            </ul>
-          </nav>
-        </header>
+        <Header />
         <main>{children}</main>
-        <footer>
-          <p>© 2024 Yuma Kobuchi. All Rights Reserved.</p>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
-};
-
-export default Layout;
+}
