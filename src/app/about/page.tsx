@@ -1,55 +1,77 @@
-"use client"; // これをファイルの最上部に追加
-
 import Link from "next/link";
-import { useEffect, useRef } from "react";
 
-export default function AboutPage() {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const section = sectionRef.current;
-    if (section) observer.observe(section);
-
-    return () => observer.disconnect();
-  }, []);
-
+export default function About() {
   return (
-    <div>
-      <h1>自己紹介</h1>
-      <p>
-        私はウェブ開発を専門とするエンジニアです。以下は私の主な経験とスキルです。
-      </p>
+    <section className="max-w-2xl mx-auto py-12">
+      <div className="bg-white rounded-xl shadow p-8 border border-green-100 mb-8 flex flex-col items-center">
+        <div className="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center text-4xl mb-4">
+          <span role="img" aria-label="profile">
+            👤
+          </span>
+        </div>
+        <h1 className="text-3xl font-bold mb-2 text-green-700">小渕 佑真</h1>
+        <p className="text-gray-600 mb-1">こぶち ゆうま</p>
+        <div className="flex flex-wrap gap-3 justify-center mt-2 mb-4">
+          <span className="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs">
+            北海道札幌市手稲区出身
+          </span>
+          <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs">
+            趣味：サッカー・ゲーム
+          </span>
+          <span className="bg-yellow-50 text-yellow-700 px-3 py-1 rounded-full text-xs">
+            好きなラーメン屋：風来堂
+          </span>
+        </div>
+        <div className="w-full flex flex-col items-center mt-4">
+          <h3 className="text-lg font-semibold text-green-700 mb-2">
+            家族構成
+          </h3>
+          <p className="mb-2 text-gray-700">妻・子供（来年出産予定）・猫3匹</p>
+          <div className="flex gap-4 mt-2">
+            {[1, 2, 3].map((n) => (
+              <div
+                key={n}
+                className="w-20 h-20 bg-gray-100 border-2 border-dashed border-green-200 rounded-lg flex items-center justify-center text-gray-400 text-xs"
+              >
+                猫の写真{n}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
-      <h2>経験</h2>
-      <ul>
-        <li>Reactを使用したフロントエンド開発</li>
-        <li>Next.jsを用いたSPAの開発</li>
-        <li>Node.jsによるバックエンドAPIの構築</li>
-        <li>RESTful APIの設計と実装</li>
-      </ul>
+      <div className="mb-10">
+        <h2 className="text-2xl font-bold mb-2 text-green-700">自己紹介</h2>
+        <p className="mb-4">
+          AWSを中心としたクラウド開発・インフラ自動化・データ分析基盤構築を得意とするフルスタックエンジニアです。新技術や新しい環境への適応力を活かし、プロジェクトの早期立ち上げやチーム貢献に努めてきました。今後も技術力と柔軟性を武器に、より良いサービスづくりに貢献していきたいと考えています。
+        </p>
+      </div>
 
-      <h2>スキル</h2>
-      <ul>
-        <li>JavaScript（ES6+）</li>
-        <li>TypeScript</li>
-        <li>HTML/CSS</li>
-        <li>Git/GitHub</li>
-        <li>データベース（MongoDB, MySQL）</li>
-        <li>UI/UXデザイン</li>
-      </ul>
+      <div className="mb-10">
+        <h2 className="text-2xl font-bold mb-2 text-green-700">職務要約</h2>
+        <p className="mb-4">
+          新卒でS社に入社後、約4年間AWSを使用したシステム開発に従事し、サーバーサイドの設計・開発・テストを担当。その後フリーランスとして幅広い技術領域に携わっています。
+        </p>
+      </div>
 
-      <Link href="/">← ホームに戻る</Link>
-    </div>
+      <div>
+        <h2 className="text-2xl font-bold mb-2 text-green-700">
+          活かせる経験・知識・技術
+        </h2>
+        <ul className="list-disc pl-5 mb-2">
+          <li>AWSを利用したパブリッククラウド上での開発経験</li>
+          <li>Pythonによるアプリケーション開発</li>
+          <li>Angularを用いた画面開発</li>
+        </ul>
+      </div>
+
+      <div className="flex justify-center mt-12">
+        <Link href="/">
+          <span className="inline-block bg-gray-200 text-green-700 px-6 py-2 rounded-full font-medium hover:bg-gray-300 transition shadow cursor-pointer">
+            ← ホームに戻る
+          </span>
+        </Link>
+      </div>
+    </section>
   );
 }
