@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { FaCar, FaChartLine, FaCloud, FaTools } from "react-icons/fa";
 
 const projects = [
@@ -39,7 +38,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="max-w-3xl mx-auto py-12 px-4">
+    <section className="max-w-3xl mx-auto pt-20 pb-16 px-4">
       <h1 className="text-3xl font-extrabold mb-10 text-green-700 text-center tracking-tight flex items-center justify-center gap-2">
         <FaTools className="inline-block text-green-400 text-2xl" />
         代表プロジェクト
@@ -50,12 +49,12 @@ export default function Projects() {
             key={p.title}
             className="bg-gradient-to-br from-white to-green-50 rounded-xl shadow-lg p-6 border border-green-200 flex flex-col gap-2"
           >
-            <div className="flex items-center gap-3 mb-2">
-              {p.icon}
-              <h2 className="text-xl font-bold text-green-700 flex-1">
+            <div className="flex items-center gap-3 mb-2 w-full">
+              <span className="flex-shrink-0 mr-2">{p.icon}</span>
+              <h2 className="text-xl font-bold text-green-700 text-center flex-1 min-w-0 truncate">
                 {p.title}
               </h2>
-              <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-semibold">
+              <span className="flex-shrink-0 text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-semibold ml-2">
                 {p.period}
               </span>
             </div>
@@ -77,13 +76,6 @@ export default function Projects() {
             <p className="text-gray-600 text-sm">{p.desc}</p>
           </div>
         ))}
-      </div>
-      <div className="flex justify-center mt-12">
-        <Link href="/">
-          <span className="inline-block bg-gray-200 text-green-700 px-6 py-2 rounded-full font-medium hover:bg-gray-300 transition shadow cursor-pointer">
-            ← ホームに戻る
-          </span>
-        </Link>
       </div>
     </section>
   );

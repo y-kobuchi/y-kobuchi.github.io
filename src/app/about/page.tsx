@@ -1,8 +1,6 @@
-import Link from "next/link";
-
 export default function About() {
   return (
-    <section className="max-w-2xl mx-auto py-12">
+    <section className="max-w-2xl mx-auto py-12 pt-16 pb-16">
       <div className="bg-white rounded-xl shadow p-8 border border-green-100 mb-8 flex flex-col items-center">
         <div className="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center text-4xl mb-4">
           <span role="img" aria-label="profile">
@@ -63,14 +61,6 @@ export default function About() {
           <li>Pythonによるアプリケーション開発</li>
           <li>Angularを用いた画面開発</li>
         </ul>
-      </div>
-
-      <div className="flex justify-center mt-12">
-        <Link href="/">
-          <span className="inline-block bg-gray-200 text-green-700 px-6 py-2 rounded-full font-medium hover:bg-gray-300 transition shadow cursor-pointer">
-            ← ホームに戻る
-          </span>
-        </Link>
       </div>
     </section>
   );

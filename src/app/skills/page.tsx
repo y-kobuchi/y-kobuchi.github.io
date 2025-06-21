@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   FaPython,
   FaJs,
@@ -57,7 +56,7 @@ function SkillLevel({ level }: { level: number }) {
 
 export default function Skills() {
   return (
-    <section className="max-w-2xl mx-auto py-12">
+    <section className="max-w-2xl mx-auto py-12 pt-16 pb-16">
       <div className="bg-gradient-to-br from-green-50 to-white rounded-xl shadow-lg p-8 border border-green-200 mb-8">
         <h1 className="text-3xl font-extrabold mb-8 text-green-700 text-center tracking-tight flex items-center justify-center gap-2">
           <FaAws className="inline-block text-green-400 text-2xl" />
@@ -92,13 +91,6 @@ export default function Skills() {
             </ul>
           </div>
         </div>
-      </div>
-      <div className="flex justify-center mt-12">
-        <Link href="/">
-          <span className="inline-block bg-gray-200 text-green-700 px-6 py-2 rounded-full font-medium hover:bg-gray-300 transition shadow cursor-pointer">
-            ← ホームに戻る
-          </span>
-        </Link>
       </div>
     </section>
   );
