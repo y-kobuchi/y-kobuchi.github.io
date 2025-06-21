@@ -1,10 +1,13 @@
-import Link from "next/link";
+import { FaEnvelope } from "react-icons/fa";
 
 export default function ContactPage() {
   return (
-    <div className="flex items-center justify-center min-h-[60vh]">
-      <div className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md text-center border border-green-200">
-        <h1 className="text-2xl font-bold mb-4 text-green-700">お問い合わせ</h1>
+    <section className="max-w-2xl mx-auto py-12 pt-16 pb-16">
+      <div className="bg-white rounded-xl shadow p-8 border border-green-100 mb-8 flex flex-col items-center">
+        <h1 className="text-3xl font-bold mb-6 text-green-700 flex items-center gap-2">
+          <FaEnvelope />
+          お問い合わせ
+        </h1>
         <p className="mb-6 text-gray-700">
           ご質問・ご相談などお気軽にご連絡ください。
         </p>
@@ -15,14 +18,7 @@ export default function ContactPage() {
           メールで問い合わせる
         </a>
         {/* SNSやGitHubなど他の連絡手段があればここに追加 */}
-        <div className="mt-6">
-          <Link href="/">
-            <span className="inline-block bg-gray-200 text-green-700 px-4 py-2 rounded-full font-medium hover:bg-gray-300 transition cursor-pointer">
-              ← ホームに戻る
-            </span>
-          </Link>
-        </div>
       </div>
-    </div>
+    </section>
   );
 }
