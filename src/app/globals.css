@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 50;
+  position: static;
+  top: auto;
+  left: auto;
+  width: 100%;
+  z-index: auto;
 }
 main {
-  margin-top: 64px;
-  margin-bottom: 64px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 footer {
   position: fixed;
