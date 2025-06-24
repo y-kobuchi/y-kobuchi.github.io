@@ -1,3 +1,6 @@
 {
-  "cSpell.words": ["EASM"]
+  "cSpell.words": ["EASM"],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
 }
