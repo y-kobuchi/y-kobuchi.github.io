@@ -5,26 +5,37 @@ export default function Works() {
   const works = [
     {
       id: "work-1",
-      title: "幼稚園バス見守りシステム アカウント移行",
-      period: "2024年2月～2024年10月 / 2024年10月～現在",
+      title: "国産EASM（External Attack Surface Management）サービス開発",
+      period: "2024年10月～現在",
       description:
-        "AWS アカウント移行プロジェクト、及び現在進行中の国産EASM（External Attack Surface Management）サービスの開発に従事。",
+        "セキュリティ脅威検知プラットフォームの開発に従事。インフラコード化、バックエンド、フロントエンド開発を一貫して担当。アジャイル開発で2週間ごとのサイクルで開発を進行中。",
       techStack: [
         "Python",
         "TypeScript",
-        "Angular",
         "PostgreSQL",
         "DynamoDB",
         "AWS Lambda",
         "API Gateway",
         "Terraform",
+        "GitHub Actions",
       ],
       effort:
-        "API Gateway のカスタムドメイン同一リージョン制限を考慮し、別リージョンを使用する移行手法を提案・実現。証明書の作成・検証を CloudFormation 化し自動化。Terraform を使用したインフラコード化、GitHub Actions による CI/CD パイプライン構築を担当。",
+        "セキュリティ対応システムの要件定義からバックエンド・フロントエンド実装まで担当。Terraform によるIaC化、GitHub Actions による CI/CD パイプライン構築を実施。API 設計から実装、データベース設計まで一貫して対応。",
       githubUrl: "https://github.com/y-kobuchi",
     },
     {
       id: "work-2",
+      title: "幼稚園バス見守りシステム アカウント移行",
+      period: "2024年2月～2024年10月",
+      description:
+        "AWS アカウント移行プロジェクト。複数サービスのアカウント間の移行を実施し、ダウンタイムを最小化した。",
+      techStack: ["Python", "AWS Lambda", "API Gateway", "CloudFormation"],
+      effort:
+        "API Gateway のカスタムドメイン同一リージョン制限を考慮し、別リージョンを使用する移行手法を提案・実現。証明書の作成・検証を CloudFormation 化し自動化。移行計画の策定から本番運用まで一貫して対応。",
+      githubUrl: "https://github.com/y-kobuchi",
+    },
+    {
+      id: "work-3",
       title: "BtoB バスロケツール開発",
       period: "2023年4月～2024年2月",
       description:
@@ -42,7 +53,7 @@ export default function Works() {
       githubUrl: "https://github.com/y-kobuchi",
     },
     {
-      id: "work-3",
+      id: "work-4",
       title: "BtoC ドラレコ開発（サーバーサイド）",
       period: "2022年7月～2023年4月",
       description:
@@ -60,23 +71,37 @@ export default function Works() {
       githubUrl: "https://github.com/y-kobuchi",
     },
     {
-      id: "work-4",
+      id: "work-5",
       title: "研究開発 バス乗客人物判定システム",
       period: "2021年3月～2022年7月",
       description:
         "動画からの人物判定と画像解析を行うシステムの研究開発。画像処理ツール、モザイク加工機能の開発を担当。",
-      techStack: ["Python", "OpenCV", "AWS Lambda", "AWS VPC", "CloudFormation", "SORACOM"],
+      techStack: [
+        "Python",
+        "OpenCV",
+        "AWS Lambda",
+        "AWS VPC",
+        "CloudFormation",
+        "SORACOM",
+      ],
       effort:
         "動画から1フレーム毎の画像を切り出し、OpenCV を使用してモザイク加工。VPC ピアリング設定で特定 IP アドレスのみを許可。SORACOM を使用した通信制御を実現。現地実証実験対応も実施。",
       githubUrl: "https://github.com/y-kobuchi",
     },
     {
-      id: "work-5",
+      id: "work-6",
       title: "研究開発 AI 利用システム",
       period: "2020年10月～2021年3月",
       description:
         "AI を活用したシステム開発。フロントエンドからバックエンドまで幅広く携わった新卒初プロジェクト。",
-      techStack: ["Python", "Tornado", "HTML/CSS", "JavaScript", "PostgreSQL", "AWS EC2"],
+      techStack: [
+        "Python",
+        "Tornado",
+        "HTML/CSS",
+        "JavaScript",
+        "PostgreSQL",
+        "AWS EC2",
+      ],
       effort:
         "3画面の UI 開発。バックエンドから取得したデータを可視化。Python フレームワーク Tornado の使い方を習得。",
       githubUrl: "https://github.com/y-kobuchi",
@@ -100,7 +125,9 @@ export default function Works() {
           {works.map((work) => (
             <div key={work.id}>
               <div className="mb-4">
-                <p className="text-sm text-primary-accent font-semibold">{work.period}</p>
+                <p className="text-sm text-primary-accent font-semibold">
+                  {work.period}
+                </p>
               </div>
               <WorkCard {...work} />
             </div>
