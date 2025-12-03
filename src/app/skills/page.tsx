@@ -29,18 +29,26 @@ export default function Skills() {
       id: "cat-2",
       category: "AWS サービス",
       skills: [
-        { name: "Lambda", level: "expert" as const },
-        { name: "API Gateway", level: "expert" as const },
-        { name: "CloudFormation", level: "advanced" as const },
-        { name: "DynamoDB", level: "advanced" as const },
-        { name: "RDS", level: "advanced" as const },
-        { name: "S3", level: "advanced" as const },
-        { name: "EC2", level: "advanced" as const },
-        { name: "VPC", level: "advanced" as const },
-        { name: "Route53", level: "advanced" as const },
-        { name: "SNS / SQS", level: "advanced" as const },
-        { name: "CloudWatch", level: "advanced" as const },
-        { name: "Step Functions", level: "intermediate" as const },
+        { name: "Lambda", level: "expert" as const, period: undefined },
+        { name: "API Gateway", level: "expert" as const, period: undefined },
+        {
+          name: "CloudFormation",
+          level: "advanced" as const,
+          period: undefined,
+        },
+        { name: "DynamoDB", level: "advanced" as const, period: undefined },
+        { name: "RDS", level: "advanced" as const, period: undefined },
+        { name: "S3", level: "advanced" as const, period: undefined },
+        { name: "EC2", level: "advanced" as const, period: undefined },
+        { name: "VPC", level: "advanced" as const, period: undefined },
+        { name: "Route53", level: "advanced" as const, period: undefined },
+        { name: "SNS / SQS", level: "advanced" as const, period: undefined },
+        { name: "CloudWatch", level: "advanced" as const, period: undefined },
+        {
+          name: "Step Functions",
+          level: "intermediate" as const,
+          period: undefined,
+        },
       ],
     },
     {
@@ -53,29 +61,37 @@ export default function Skills() {
           period: "4年2ヶ月",
         },
         { name: "MySQL", level: "intermediate" as const, period: "1年4ヶ月" },
-        { name: "DynamoDB", level: "advanced" as const },
-        { name: "SQLite", level: "intermediate" as const },
+        { name: "DynamoDB", level: "advanced" as const, period: undefined },
+        { name: "SQLite", level: "intermediate" as const, period: undefined },
       ],
     },
     {
       id: "cat-4",
       category: "フロントエンド",
       skills: [
-        { name: "Angular", level: "advanced" as const },
-        { name: "HTML/CSS", level: "advanced" as const },
-        { name: "JavaScript", level: "advanced" as const },
-        { name: "React", level: "intermediate" as const },
+        { name: "Angular", level: "advanced" as const, period: undefined },
+        { name: "HTML/CSS", level: "advanced" as const, period: undefined },
+        { name: "JavaScript", level: "advanced" as const, period: undefined },
+        { name: "React", level: "intermediate" as const, period: undefined },
       ],
     },
     {
       id: "cat-5",
       category: "DevOps / インフラ",
       skills: [
-        { name: "Terraform", level: "advanced" as const },
-        { name: "Docker", level: "intermediate" as const },
-        { name: "CI/CD（GitLab Actions）", level: "advanced" as const },
-        { name: "GitHub Actions", level: "intermediate" as const },
-        { name: "Linux", level: "advanced" as const },
+        { name: "Terraform", level: "advanced" as const, period: undefined },
+        { name: "Docker", level: "intermediate" as const, period: undefined },
+        {
+          name: "CI/CD（GitLab Actions）",
+          level: "advanced" as const,
+          period: undefined,
+        },
+        {
+          name: "GitHub Actions",
+          level: "intermediate" as const,
+          period: undefined,
+        },
+        { name: "Linux", level: "advanced" as const, period: undefined },
       ],
     },
   ];
@@ -87,7 +103,8 @@ export default function Skills() {
 
         <div className="mb-12 p-6 bg-slate-900 border border-slate-700 rounded-lg">
           <p className="text-primary-muted leading-relaxed mb-4">
-            4年以上の実務経験を積んだ技術スタックです。AWS を中心としたクラウドシステム開発、 Python
+            4年以上の実務経験を積んだ技術スタックです。AWS
+            を中心としたクラウドシステム開発、 Python
             によるバックエンド開発、Terraform
             によるインフラストラクチャ・アズ・コード化が得意分野です。
           </p>
@@ -99,13 +116,17 @@ export default function Skills() {
 
         {skillsByCategory.map((category) => (
           <section key={category.id} className="mb-16">
-            <h3 className="text-2xl font-bold text-primary-text mb-6">{category.category}</h3>
+            <h3 className="text-2xl font-bold text-primary-text mb-6">
+              {category.category}
+            </h3>
             <div className="grid grid-cols-2 gap-6">
               {category.skills.map((skill) => (
                 <div key={skill.name} className="relative">
                   <SkillCard name={skill.name} level={skill.level} />
                   {skill.period && (
-                    <p className="text-xs text-primary-muted mt-2">{skill.period}</p>
+                    <p className="text-xs text-primary-muted mt-2">
+                      {skill.period}
+                    </p>
                   )}
                 </div>
               ))}
@@ -115,7 +136,9 @@ export default function Skills() {
 
         {/* 補足 */}
         <section className="mt-16 pt-12 border-t border-slate-700">
-          <h3 className="text-xl font-bold text-primary-text mb-6">レベル定義</h3>
+          <h3 className="text-xl font-bold text-primary-text mb-6">
+            レベル定義
+          </h3>
           <ul className="space-y-4 text-primary-muted">
             <li className="flex gap-3">
               <span className="text-primary-accent font-bold">●</span>
