@@ -1,67 +1,127 @@
+import { SectionTitle } from "../components/SectionTitle";
+
 export default function About() {
   return (
-    <section className="max-w-2xl mx-auto py-12 pt-16 pb-16">
-      <div className="bg-white rounded-xl shadow p-8 border border-green-100 mb-8 flex flex-col items-center">
-        <div className="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center text-4xl mb-4">
-          <span role="img" aria-label="profile">
-            👤
-          </span>
-        </div>
-        <h1 className="text-3xl font-bold mb-2 text-green-700">小渕 佑真</h1>
-        <p className="text-gray-600 mb-1">こぶち ゆうま</p>
-        <div className="flex flex-wrap gap-3 justify-center mt-2 mb-4">
-          <span className="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs">
-            北海道札幌市手稲区出身
-          </span>
-          <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs">
-            趣味：サッカー・ゲーム
-          </span>
-          <span className="bg-yellow-50 text-yellow-700 px-3 py-1 rounded-full text-xs">
-            好きなラーメン屋：風来堂
-          </span>
-        </div>
-        <div className="w-full flex flex-col items-center mt-4">
-          <h3 className="text-lg font-semibold text-green-700 mb-2">
-            家族構成
-          </h3>
-          <p className="mb-2 text-gray-700">妻・子供（来年出産予定）・猫3匹</p>
-          <div className="flex gap-4 mt-2">
-            {[1, 2, 3].map((n) => (
-              <div
-                key={n}
-                className="w-20 h-20 bg-gray-100 border-2 border-dashed border-green-200 rounded-lg flex items-center justify-center text-gray-400 text-xs"
-              >
-                猫の写真{n}
+    <main className="min-h-screen bg-primary-bg text-primary-text py-24 px-6 pt-32">
+      <div className="max-w-4xl mx-auto">
+        <SectionTitle title="About" subtitle="経歴・背景" />
+
+        {/* 職務要約 */}
+        <section className="mb-16">
+          <h3 className="text-2xl font-bold text-primary-text mb-4">職務要約</h3>
+          <p className="text-primary-muted leading-relaxed mb-4">
+            シーズ・ラボで4年間、AWS
+            を利用したシステム開発に従事し、サーバーサイドの設計・開発・テストを担当してきました。
+            その後、2024年10月からフリーランスに転向し、セキュアスカイ・テクノロジーにて業務委託として開発を進めています。
+          </p>
+          <p className="text-primary-muted leading-relaxed">
+            OpenAPI を用いた API Gateway と Lambda の開発が得意で、API
+            設計からデータベース設計まで一貫して担当した経験があります。
+          </p>
+        </section>
+
+        {/* 経歴 */}
+        <section className="mb-16">
+          <h3 className="text-2xl font-bold text-primary-text mb-8">経歴</h3>
+          <div className="space-y-8">
+            {[
+              {
+                id: "job-1",
+                period: "2024年10月～現在",
+                title: "フリーランスエンジニア",
+                company: "セキュアスカイ・テクノロジー（業務委託）",
+                description:
+                  "国産EASM（External Attack Surface Management）サービスの開発に従事。インフラコード化、バックエンド、フロントエンド開発を一貫して担当。アジャイル開発で2週間ごとのサイクルで開発を進行。",
+              },
+              {
+                id: "job-2",
+                period: "2020年4月～2024年10月",
+                title: "ソフトウェアシステムエンジニア",
+                company: "株式会社シーズ・ラボ",
+                description:
+                  "AWS を使用したシステム開発に4年間従事。バス見守りシステムのアカウント移行、ドラレコシステム、人流分析プロジェクトなど、複数のプロジェクトでサーバーサイド開発を担当。",
+              },
+              {
+                id: "job-3",
+                period: "2020年4月～2021年4月",
+                title: "新人研修・OJT",
+                company: "株式会社シーズ・ラボ",
+                description:
+                  "プログラミングの基礎、AWS の基本サービスを習得。最初のプロジェクトとして AI 利用システムの開発に参画。",
+              },
+            ].map((item) => (
+              <div key={item.id} className="border-l-2 border-primary-accent pl-6">
+                <p className="text-sm text-primary-accent font-semibold mb-2">{item.period}</p>
+                <h4 className="text-lg font-bold text-primary-text mb-1">{item.title}</h4>
+                <p className="text-sm text-primary-muted mb-2">{item.company}</p>
+                <p className="text-primary-muted">{item.description}</p>
               </div>
             ))}
           </div>
-        </div>
-      </div>
+        </section>
 
-      <div className="mb-10">
-        <h2 className="text-2xl font-bold mb-2 text-green-700">自己紹介</h2>
-        <p className="mb-4">
-          AWSを中心としたクラウド開発・インフラ自動化・データ分析基盤構築を得意とするフルスタックエンジニアです。新技術や新しい環境への適応力を活かし、プロジェクトの早期立ち上げやチーム貢献に努めてきました。今後も技術力と柔軟性を武器に、より良いサービスづくりに貢献していきたいと考えています。
-        </p>
-      </div>
+        {/* エンジニアとしての強み */}
+        <section className="mb-16">
+          <h3 className="text-2xl font-bold text-primary-text mb-8">エンジニアとしての強み</h3>
+          <div className="space-y-6">
+            <div>
+              <h4 className="text-lg font-semibold text-primary-accent mb-2">
+                多種多様なサービス経験
+              </h4>
+              <p className="text-primary-muted leading-relaxed">
+                AWS の主要サービス（EC2、Lambda、CloudFormation、API Gateway、RDS、DynamoDB、S3
+                等）を常に使用してきており、サービスへの理解も深いです。
+                開発工程としては詳細設計から結合テストまでの経験があります。インフラはコード化されており、ソースの改修実績も豊富です。
+              </p>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-primary-accent mb-2">新技術への適応力</h4>
+              <p className="text-primary-muted leading-relaxed">
+                複数のプロジェクトで様々な環境や新技術に触れ、ドキュメント理解や有識者への質問を通じて工数削減に工夫しています。
+                後輩や後任がスムーズに業務に従事できるような仕組み作りにも力を入れています。
+              </p>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-primary-accent mb-2">コード品質と可読性</h4>
+              <p className="text-primary-muted leading-relaxed">
+                他者が読んでもわかりやすいコード記述を心がけています。オブジェクト指向を意識したフォルダ構成、詳細なコメント、充実したドキュメント作成を大切にしています。
+              </p>
+            </div>
+          </div>
+        </section>
 
-      <div className="mb-10">
-        <h2 className="text-2xl font-bold mb-2 text-green-700">職務要約</h2>
-        <p className="mb-4">
-          新卒でS社に入社後、約4年間AWSを使用したシステム開発に従事し、サーバーサイドの設計・開発・テストを担当。その後フリーランスとして幅広い技術領域に携わっています。
-        </p>
+        {/* 資格 */}
+        <section>
+          <h3 className="text-2xl font-bold text-primary-text mb-6">資格</h3>
+          <ul className="space-y-3 text-primary-muted">
+            {[
+              {
+                id: "cert-1",
+                name: "AWS Certified Cloud Practitioner",
+                date: "2023年4月取得",
+              },
+              {
+                id: "cert-2",
+                name: "基本情報技術者試験",
+                date: "2022年6月合格",
+              },
+              {
+                id: "cert-3",
+                name: "普通自動車第一種運転免許",
+                date: "2017年8月取得",
+              },
+            ].map((cert) => (
+              <li key={cert.id} className="flex items-start gap-4">
+                <span className="text-primary-accent font-bold mt-1">✓</span>
+                <div>
+                  <div className="text-primary-text font-semibold">{cert.name}</div>
+                  <div className="text-sm text-primary-muted">{cert.date}</div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
       </div>
-
-      <div>
-        <h2 className="text-2xl font-bold mb-2 text-green-700">
-          活かせる経験・知識・技術
-        </h2>
-        <ul className="list-disc pl-5 mb-2">
-          <li>AWSを利用したパブリッククラウド上での開発経験</li>
-          <li>Pythonによるアプリケーション開発</li>
-          <li>Angularを用いた画面開発</li>
-        </ul>
-      </div>
-    </section>
+    </main>
   );
 }

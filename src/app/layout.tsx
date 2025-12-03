@@ -1,24 +1,18 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 import "./globals.css";
 
 export const metadata = {
-  title: "小渕佑真のPortfolio",
-  description: "An engineer's portfolio",
+  title: "小渕 佑真 | Portfolio",
+  description: "Full Stack Engineer のポートフォリオサイト",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
-      <body className="flex flex-col min-h-screen relative bg-green-50">
+      <body className="bg-primary-bg text-primary-text">
         <Header />
-        <main className="flex-grow px-4 py-4 max-w-4xl mx-auto">
-          {children}
-        </main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>

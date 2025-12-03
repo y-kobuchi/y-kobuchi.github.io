@@ -1,97 +1,146 @@
-import {
-  FaPython,
-  FaJs,
-  FaDatabase,
-  FaAws,
-  FaCar,
-  FaCertificate,
-} from "react-icons/fa";
-
-const skills = [
-  { name: "Python", icon: <FaPython className="text-blue-400" />, level: 3 },
-  { name: "JavaScript", icon: <FaJs className="text-yellow-400" />, level: 2 },
-  { name: "TypeScript", icon: <FaJs className="text-blue-500" />, level: 2 },
-  { name: "ShellScript", icon: <FaJs className="text-gray-500" />, level: 2 },
-  { name: "MySQL", icon: <FaDatabase className="text-green-700" />, level: 2 },
-  {
-    name: "PostgreSQL",
-    icon: <FaDatabase className="text-blue-700" />,
-    level: 2,
-  },
-  { name: "SQLite", icon: <FaDatabase className="text-gray-700" />, level: 1 },
-  { name: "AWS", icon: <FaAws className="text-orange-400" />, level: 3 },
-];
-
-const certs = [
-  {
-    name: "普通自動車第一種運転免許",
-    icon: <FaCar className="text-gray-500" />,
-  },
-  {
-    name: "基本情報技術者試験",
-    icon: <FaCertificate className="text-blue-500" />,
-  },
-  {
-    name: "AWS Certified Cloud Practitioner",
-    icon: <FaAws className="text-orange-400" />,
-  },
-];
-
-function SkillLevel({ level }: { level: number }) {
-  return (
-    <div className="flex gap-1">
-      {[...Array(3)].map((_, i) => (
-        <span
-          key={i}
-          className={
-            i < level
-              ? "inline-block w-3 h-3 rounded-full bg-green-500"
-              : "inline-block w-3 h-3 rounded-full bg-gray-200"
-          }
-        />
-      ))}
-    </div>
-  );
-}
+import { SectionTitle } from "../components/SectionTitle";
+import { SkillCard } from "../components/SkillCard";
 
 export default function Skills() {
+  const skillsByCategory = [
+    {
+      id: "cat-1",
+      category: "プログラミング言語",
+      skills: [
+        { name: "Python", level: "expert" as const, period: "4年2ヶ月" },
+        {
+          name: "TypeScript",
+          level: "intermediate" as const,
+          period: "10ヶ月",
+        },
+        {
+          name: "JavaScript",
+          level: "intermediate" as const,
+          period: "1年6ヶ月",
+        },
+        {
+          name: "ShellScript",
+          level: "advanced" as const,
+          period: "3年2ヶ月",
+        },
+      ],
+    },
+    {
+      id: "cat-2",
+      category: "AWS サービス",
+      skills: [
+        { name: "Lambda", level: "expert" as const },
+        { name: "API Gateway", level: "expert" as const },
+        { name: "CloudFormation", level: "advanced" as const },
+        { name: "DynamoDB", level: "advanced" as const },
+        { name: "RDS", level: "advanced" as const },
+        { name: "S3", level: "advanced" as const },
+        { name: "EC2", level: "advanced" as const },
+        { name: "VPC", level: "advanced" as const },
+        { name: "Route53", level: "advanced" as const },
+        { name: "SNS / SQS", level: "advanced" as const },
+        { name: "CloudWatch", level: "advanced" as const },
+        { name: "Step Functions", level: "intermediate" as const },
+      ],
+    },
+    {
+      id: "cat-3",
+      category: "データベース",
+      skills: [
+        {
+          name: "PostgreSQL",
+          level: "intermediate" as const,
+          period: "4年2ヶ月",
+        },
+        { name: "MySQL", level: "intermediate" as const, period: "1年4ヶ月" },
+        { name: "DynamoDB", level: "advanced" as const },
+        { name: "SQLite", level: "intermediate" as const },
+      ],
+    },
+    {
+      id: "cat-4",
+      category: "フロントエンド",
+      skills: [
+        { name: "Angular", level: "advanced" as const },
+        { name: "HTML/CSS", level: "advanced" as const },
+        { name: "JavaScript", level: "advanced" as const },
+        { name: "React", level: "intermediate" as const },
+      ],
+    },
+    {
+      id: "cat-5",
+      category: "DevOps / インフラ",
+      skills: [
+        { name: "Terraform", level: "advanced" as const },
+        { name: "Docker", level: "intermediate" as const },
+        { name: "CI/CD（GitLab Actions）", level: "advanced" as const },
+        { name: "GitHub Actions", level: "intermediate" as const },
+        { name: "Linux", level: "advanced" as const },
+      ],
+    },
+  ];
+
   return (
-    <section className="max-w-2xl mx-auto py-12 pt-16 pb-16">
-      <div className="bg-gradient-to-br from-green-50 to-white rounded-xl shadow-lg p-8 border border-green-200 mb-8">
-        <h1 className="text-3xl font-extrabold mb-8 text-green-700 text-center tracking-tight flex items-center justify-center gap-2">
-          <FaAws className="inline-block text-green-400 text-2xl" />
-          テクニカルスキル & 資格
-        </h1>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div>
-            <h2 className="text-xl font-bold mb-4 text-green-700 flex items-center gap-2">
-              <FaPython className="text-blue-400" /> スキル
-            </h2>
-            <ul className="space-y-3">
-              {skills.map((s) => (
-                <li key={s.name} className="flex items-center gap-3">
-                  {s.icon}
-                  <span className="font-medium w-28">{s.name}</span>
-                  <SkillLevel level={s.level} />
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-xl font-bold mb-4 text-green-700 flex items-center gap-2">
-              <FaCertificate className="text-yellow-500" /> 資格
-            </h2>
-            <ul className="space-y-3">
-              {certs.map((c) => (
-                <li key={c.name} className="flex items-center gap-3">
-                  {c.icon}
-                  <span className="font-medium">{c.name}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <main className="min-h-screen bg-primary-bg text-primary-text py-24 px-6 pt-32">
+      <div className="max-w-5xl mx-auto">
+        <SectionTitle title="Skills" subtitle="保有スキル・技術スタック" />
+
+        <div className="mb-12 p-6 bg-slate-900 border border-slate-700 rounded-lg">
+          <p className="text-primary-muted leading-relaxed mb-4">
+            4年以上の実務経験を積んだ技術スタックです。AWS を中心としたクラウドシステム開発、 Python
+            によるバックエンド開発、Terraform
+            によるインフラストラクチャ・アズ・コード化が得意分野です。
+          </p>
+          <p className="text-primary-muted leading-relaxed">
+            新しい技術にも積極的に取り組んでおり、TypeScript、Next.js、playwright
+            などの導入経験があります。
+          </p>
         </div>
+
+        {skillsByCategory.map((category) => (
+          <section key={category.id} className="mb-16">
+            <h3 className="text-2xl font-bold text-primary-text mb-6">{category.category}</h3>
+            <div className="grid grid-cols-2 gap-6">
+              {category.skills.map((skill) => (
+                <div key={skill.name} className="relative">
+                  <SkillCard name={skill.name} level={skill.level} />
+                  {skill.period && (
+                    <p className="text-xs text-primary-muted mt-2">{skill.period}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        {/* 補足 */}
+        <section className="mt-16 pt-12 border-t border-slate-700">
+          <h3 className="text-xl font-bold text-primary-text mb-6">レベル定義</h3>
+          <ul className="space-y-4 text-primary-muted">
+            <li className="flex gap-3">
+              <span className="text-primary-accent font-bold">●</span>
+              <div>
+                <strong className="text-primary-text">Expert：</strong>
+                5年以上の実務経験あり、新人指導・コードレビュー可能なレベル
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-primary-accent font-bold">●</span>
+              <div>
+                <strong className="text-primary-text">Advanced：</strong>
+                2年以上の実務経験あり、複雑な案件や設計対応が可能なレベル
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-primary-accent font-bold">●</span>
+              <div>
+                <strong className="text-primary-text">Intermediate：</strong>
+                基本的な知識と経験あり、サポート環境での対応が可能なレベル
+              </div>
+            </li>
+          </ul>
+        </section>
       </div>
-    </section>
+    </main>
   );
 }

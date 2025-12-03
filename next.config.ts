@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
     config.resolve.alias['@'] = path.resolve(__dirname, 'src');
     return config;
   },
+  turbopack: {}, // ← ここの追加が重要
 };
 
 export default nextConfig;

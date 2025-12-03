@@ -1,24 +1,60 @@
-import { FaEnvelope } from "react-icons/fa";
+import { SectionTitle } from "../components/SectionTitle";
 
-export default function ContactPage() {
+export default function Contact() {
   return (
-    <section className="max-w-2xl mx-auto py-12 pt-16 pb-16">
-      <div className="bg-white rounded-xl shadow p-8 border border-green-100 mb-8 flex flex-col items-center">
-        <h1 className="text-3xl font-bold mb-6 text-green-700 flex items-center gap-2">
-          <FaEnvelope />
-          お問い合わせ
-        </h1>
-        <p className="mb-6 text-gray-700">
-          ご質問・ご相談などお気軽にご連絡ください。
-        </p>
-        <a
-          href="mailto:kob_y0220@outlook.jp"
-          className="inline-block bg-green-600 text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-green-700 transition mb-4"
-        >
-          メールで問い合わせる
-        </a>
-        {/* SNSやGitHubなど他の連絡手段があればここに追加 */}
+    <main className="min-h-screen bg-primary-bg text-primary-text py-24 px-6 pt-32">
+      <div className="max-w-4xl mx-auto">
+        <SectionTitle title="Contact" subtitle="お問い合わせ" />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* 連絡先情報 */}
+          <section>
+            <h3 className="text-2xl font-bold text-primary-text mb-8">連絡先</h3>
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm text-primary-muted mb-2">メール</p>
+                <a
+                  href="mailto:kob_y0220@outlook.jp"
+                  className="text-primary-accent hover:underline text-lg"
+                >
+                  kob_y0220@outlook.jp
+                </a>
+              </div>
+              <div>
+                <p className="text-sm text-primary-muted mb-2">GitHub</p>
+                <a
+                  href="https://github.com/y-kobuchi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-accent hover:underline text-lg"
+                >
+                  github.com/y-kobuchi
+                </a>
+              </div>
+              <div>
+                <p className="text-sm text-primary-muted mb-2">LinkedIn</p>
+                <a
+                  href="https://www.linkedin.com/in/%E4%BD%91%E7%9C%9F-%E5%B0%8F%E6%B8%95-1bb970371/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-accent hover:underline text-lg"
+                >
+                  LinkedIn Profile
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {/* 補足 */}
+        <section className="mt-16 p-8 bg-slate-900 border border-slate-700 rounded-lg">
+          <h3 className="text-lg font-bold text-primary-text mb-3">補足</h3>
+          <p className="text-primary-muted leading-relaxed">
+            お仕事のご依頼、技術相談、その他のお問い合わせなど、いつでもお気軽にご連絡ください。
+            通常、24時間以内にご返信させていただきます。
+          </p>
+        </section>
       </div>
-    </section>
+    </main>
   );
 }
