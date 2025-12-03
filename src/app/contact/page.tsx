@@ -9,7 +9,9 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* 連絡先情報 */}
           <section>
-            <h3 className="text-2xl font-bold text-primary-text mb-8">連絡先</h3>
+            <h3 className="text-2xl font-bold text-primary-text mb-8">
+              連絡先
+            </h3>
             <div className="space-y-6">
               <div>
                 <p className="text-sm text-primary-muted mb-2">メール</p>
