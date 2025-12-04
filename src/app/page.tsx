@@ -107,18 +107,29 @@ export default function Home() {
             {[
               {
                 id: "work-1",
-                title: "幼稚園バス見守りシステム アカウント移行",
-                tech: ["Python", "TypeScript", "Terraform", "AWS Lambda"],
+                title:
+                  "国産EASM（External Attack Surface Management）サービス開発",
+                tech: [
+                  "Python",
+                  "TypeScript",
+                  "React",
+                  "PostgreSQL",
+                  "DynamoDB",
+                  "AWS Lambda",
+                  "API Gateway",
+                  "Terraform",
+                  "GitHub Actions",
+                ],
               },
               {
                 id: "work-2",
-                title: "BtoB バスロケツール開発",
-                tech: ["Python", "PostgreSQL", "API Gateway", "CloudFormation"],
+                title: "幼稚園バス見守りシステム アカウント移行",
+                tech: ["Python", "AWS Lambda", "API Gateway", "CloudFormation"],
               },
               {
                 id: "work-3",
-                title: "BtoC ドラレコ開発（サーバーサイド）",
-                tech: ["Python", "DynamoDB", "AWS Lambda", "API Gateway"],
+                title: "BtoB バスロケツール開発",
+                tech: ["Python", "PostgreSQL", "AWS Lambda", "API Gateway"],
               },
             ].map((work) => (
               <div
