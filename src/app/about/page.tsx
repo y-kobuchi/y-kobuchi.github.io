@@ -8,15 +8,19 @@ export default function About() {
 
         {/* 職務要約 */}
         <section className="mb-16">
-          <h3 className="text-2xl font-bold text-primary-text mb-4">職務要約</h3>
+          <h3 className="text-2xl font-bold text-primary-text mb-4">
+            職務要約
+          </h3>
           <p className="text-primary-muted leading-relaxed mb-4">
             シーズ・ラボで4年間、AWS
             を利用したシステム開発に従事し、サーバーサイドの設計・開発・テストを担当してきました。
             その後、2024年10月からフリーランスに転向し、セキュアスカイ・テクノロジーにて業務委託として開発を進めています。
           </p>
           <p className="text-primary-muted leading-relaxed">
-            OpenAPI を用いた API Gateway と Lambda の開発が得意で、API
-            設計からデータベース設計まで一貫して担当した経験があります。
+            OpenAPI を用いた API Gateway と Lambda の開発、TypeScript と Angular
+            を用いたフロントエンド開発が得意で、API
+            設計からデータベース設計、UI/UX
+            実装まで一貫して担当した経験があります。
           </p>
         </section>
 
@@ -50,10 +54,19 @@ export default function About() {
                   "プログラミングの基礎、AWS の基本サービスを習得。最初のプロジェクトとして AI 利用システムの開発に参画。",
               },
             ].map((item) => (
-              <div key={item.id} className="border-l-2 border-primary-accent pl-6">
-                <p className="text-sm text-primary-accent font-semibold mb-2">{item.period}</p>
-                <h4 className="text-lg font-bold text-primary-text mb-1">{item.title}</h4>
-                <p className="text-sm text-primary-muted mb-2">{item.company}</p>
+              <div
+                key={item.id}
+                className="border-l-2 border-primary-accent pl-6"
+              >
+                <p className="text-sm text-primary-accent font-semibold mb-2">
+                  {item.period}
+                </p>
+                <h4 className="text-lg font-bold text-primary-text mb-1">
+                  {item.title}
+                </h4>
+                <p className="text-sm text-primary-muted mb-2">
+                  {item.company}
+                </p>
                 <p className="text-primary-muted">{item.description}</p>
               </div>
             ))}
@@ -62,27 +75,34 @@ export default function About() {
 
         {/* エンジニアとしての強み */}
         <section className="mb-16">
-          <h3 className="text-2xl font-bold text-primary-text mb-8">エンジニアとしての強み</h3>
+          <h3 className="text-2xl font-bold text-primary-text mb-8">
+            エンジニアとしての強み
+          </h3>
           <div className="space-y-6">
             <div>
               <h4 className="text-lg font-semibold text-primary-accent mb-2">
                 多種多様なサービス経験
               </h4>
               <p className="text-primary-muted leading-relaxed">
-                AWS の主要サービス（EC2、Lambda、CloudFormation、API Gateway、RDS、DynamoDB、S3
+                AWS の主要サービス（EC2、Lambda、CloudFormation、API
+                Gateway、RDS、DynamoDB、S3
                 等）を常に使用してきており、サービスへの理解も深いです。
                 開発工程としては詳細設計から結合テストまでの経験があります。インフラはコード化されており、ソースの改修実績も豊富です。
               </p>
             </div>
             <div>
-              <h4 className="text-lg font-semibold text-primary-accent mb-2">新技術への適応力</h4>
+              <h4 className="text-lg font-semibold text-primary-accent mb-2">
+                新技術への適応力
+              </h4>
               <p className="text-primary-muted leading-relaxed">
                 複数のプロジェクトで様々な環境や新技術に触れ、ドキュメント理解や有識者への質問を通じて工数削減に工夫しています。
                 後輩や後任がスムーズに業務に従事できるような仕組み作りにも力を入れています。
               </p>
             </div>
             <div>
-              <h4 className="text-lg font-semibold text-primary-accent mb-2">コード品質と可読性</h4>
+              <h4 className="text-lg font-semibold text-primary-accent mb-2">
+                コード品質と可読性
+              </h4>
               <p className="text-primary-muted leading-relaxed">
                 他者が読んでもわかりやすいコード記述を心がけています。オブジェクト指向を意識したフォルダ構成、詳細なコメント、充実したドキュメント作成を大切にしています。
               </p>
@@ -114,7 +134,9 @@ export default function About() {
               <li key={cert.id} className="flex items-start gap-4">
                 <span className="text-primary-accent font-bold mt-1">✓</span>
                 <div>
-                  <div className="text-primary-text font-semibold">{cert.name}</div>
+                  <div className="text-primary-text font-semibold">
+                    {cert.name}
+                  </div>
                   <div className="text-sm text-primary-muted">{cert.date}</div>
                 </div>
               </li>

@@ -12,6 +12,7 @@ export default function Works() {
       techStack: [
         "Python",
         "TypeScript",
+        "Angular",
         "PostgreSQL",
         "DynamoDB",
         "AWS Lambda",

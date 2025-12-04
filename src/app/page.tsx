@@ -112,7 +112,7 @@ export default function Home() {
                 tech: [
                   "Python",
                   "TypeScript",
-                  "React",
+                  "Angular",
                   "PostgreSQL",
                   "DynamoDB",
                   "AWS Lambda",
