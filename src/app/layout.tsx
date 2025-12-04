@@ -7,7 +7,11 @@ export const metadata = {
   description: "Full Stack Engineer のポートフォリオサイト",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="ja">
       <body className="bg-primary-bg text-primary-text">

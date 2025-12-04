@@ -6,7 +6,13 @@ interface WorkCardProps {
   githubUrl?: string;
 }
 
-export function WorkCard({ title, description, techStack, effort, githubUrl }: WorkCardProps) {
+export function WorkCard({
+  title,
+  description,
+  techStack,
+  effort,
+  githubUrl,
+}: WorkCardProps) {
   return (
     <div className="bg-slate-800 border border-slate-700 rounded-lg p-8">
       <h3 className="text-2xl font-bold text-primary-text mb-3">{title}</h3>
