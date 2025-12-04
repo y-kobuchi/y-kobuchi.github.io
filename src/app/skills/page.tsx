@@ -10,13 +10,13 @@ export default function Skills() {
         { name: "Python", level: "expert" as const, period: "4年2ヶ月" },
         {
           name: "TypeScript",
-          level: "intermediate" as const,
-          period: "10ヶ月",
+          level: "advanced" as const,
+          period: "1年4ヶ月",
         },
         {
           name: "JavaScript",
-          level: "intermediate" as const,
-          period: "1年6ヶ月",
+          level: "advanced" as const,
+          period: "2年",
         },
         {
           name: "ShellScript",
@@ -33,7 +33,7 @@ export default function Skills() {
         { name: "API Gateway", level: "expert" as const, period: undefined },
         {
           name: "CloudFormation",
-          level: "advanced" as const,
+          level: "expert" as const,
           period: undefined,
         },
         { name: "DynamoDB", level: "advanced" as const, period: undefined },
@@ -41,7 +41,7 @@ export default function Skills() {
         { name: "S3", level: "advanced" as const, period: undefined },
         { name: "EC2", level: "advanced" as const, period: undefined },
         { name: "VPC", level: "advanced" as const, period: undefined },
-        { name: "Route53", level: "advanced" as const, period: undefined },
+        { name: "Route53", level: "intermediate" as const, period: undefined },
         { name: "SNS / SQS", level: "advanced" as const, period: undefined },
         { name: "CloudWatch", level: "advanced" as const, period: undefined },
         {
@@ -57,7 +57,7 @@ export default function Skills() {
       skills: [
         {
           name: "PostgreSQL",
-          level: "intermediate" as const,
+          level: "advanced" as const,
           period: "4年2ヶ月",
         },
         { name: "MySQL", level: "intermediate" as const, period: "1年4ヶ月" },
@@ -69,7 +69,7 @@ export default function Skills() {
       id: "cat-4",
       category: "フロントエンド",
       skills: [
-        { name: "Angular", level: "advanced" as const, period: undefined },
+        { name: "Angular", level: "advanced" as const, period: "1年" },
         { name: "HTML/CSS", level: "advanced" as const, period: undefined },
         { name: "JavaScript", level: "advanced" as const, period: undefined },
         { name: "React", level: "intermediate" as const, period: undefined },
@@ -79,17 +79,17 @@ export default function Skills() {
       id: "cat-5",
       category: "DevOps / インフラ",
       skills: [
-        { name: "Terraform", level: "advanced" as const, period: undefined },
-        { name: "Docker", level: "intermediate" as const, period: undefined },
+        { name: "Terraform", level: "expert" as const, period: undefined },
+        { name: "Docker", level: "advanced" as const, period: undefined },
         {
-          name: "CI/CD（GitLab Actions）",
+          name: "CI/CD（GitLab CI）",
           level: "advanced" as const,
           period: undefined,
         },
         {
           name: "GitHub Actions",
-          level: "intermediate" as const,
-          period: undefined,
+          level: "advanced" as const,
+          period: "1年4ヶ月",
         },
         { name: "Linux", level: "advanced" as const, period: undefined },
       ],
@@ -143,22 +143,31 @@ export default function Skills() {
             <li className="flex gap-3">
               <span className="text-primary-accent font-bold">●</span>
               <div>
-                <strong className="text-primary-text">Expert：</strong>
-                5年以上の実務経験あり、新人指導・コードレビュー可能なレベル
+                <strong className="text-primary-text">
+                  Expert（エキスパート）：
+                </strong>
+                複数プロジェクト/概ね4年以上の実務経験を有し、設計・実装・運用・コードレビュー・新人指導まで独立して行える。
+                技術選定やプロセス改善の提案ができるレベル。
               </div>
             </li>
             <li className="flex gap-3">
               <span className="text-primary-accent font-bold">●</span>
               <div>
-                <strong className="text-primary-text">Advanced：</strong>
-                2年以上の実務経験あり、複雑な案件や設計対応が可能なレベル
+                <strong className="text-primary-text">
+                  Advanced（上級者）：
+                </strong>
+                2〜3年程度の実務経験があり、複雑な機能の設計・実装をほぼ独力で遂行できる。
+                チーム内で技術的リードを担えるレベル。
               </div>
             </li>
             <li className="flex gap-3">
               <span className="text-primary-accent font-bold">●</span>
               <div>
-                <strong className="text-primary-text">Intermediate：</strong>
-                基本的な知識と経験あり、サポート環境での対応が可能なレベル
+                <strong className="text-primary-text">
+                  Intermediate（中級者）：
+                </strong>
+                1〜2年の実務経験があり、基本的なタスクは独立して対応可能。
+                複雑な設計や問題解決は上位者のサポートを受けながら行うレベル。
               </div>
             </li>
           </ul>
